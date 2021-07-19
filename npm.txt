@@ -1,1 +1,44 @@
-aaaa
+npm install graphql-yoga
+npm install -g nodemon : 파일을 수정할때마다 서버를 재시작해준다 ===pm2
+npm install babel-node : 더 좋게 코드를 작성하게 만들어준다
+npm install babel-cli
+npm install babel-cli babel-presrt-env babel-preset-stage-3  
+GraphQL 로 할수 있는일 1.Over-fetching:모든 오브젝트를 받고 내가쓰고싶은것만 쓰는것
+                      2.Under-fetching:인스타그램 페이지를 사용하려면 피드,알림,사용자프로필 즉 3가지 요청이 3번
+                                        오고가야 앱이 시작된다 rest에서 하나를 완성하려고 많은 소스를 요청하는것
+                                            GraphQL이 해결할수 있는 문제
+
+query{
+    feed{
+        comments
+        likeNumber
+    }
+    notifications{
+        isRead
+    }
+    user{
+        username
+        profilePic
+    }
+} 이걸 GraphQL의 Backend 에 보내면 이게 이와같은 요청 정보를 담은 Object를 보낸다
+
+{
+    feed: [
+        {
+            comments:1.
+            likeMumber:20
+        }
+    ].
+    mofifications:[
+        {
+            isRead:false
+        }
+        ,{
+            isRead:trus
+        }
+    ],
+    user:{
+        username: "lee"
+        profile: "http:"
+    }
+}  이게 GraphQL 에서 보낸 자바스크립트 오브젝트
