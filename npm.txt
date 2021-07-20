@@ -8,9 +8,9 @@ GraphQL 로 할수 있는일 1.Over-fetching:모든 오브젝트를 받고 내�
                                         오고가야 앱이 시작된다 rest에서 하나를 완성하려고 많은 소스를 요청하는것
                                             GraphQL이 해결할수 있는 문제
 
-query{
+query{ 
     feed{
-        comments
+        comments!  //!뜻 isRequired(필수)
         likeNumber
     }
     notifications{
